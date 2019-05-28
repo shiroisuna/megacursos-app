@@ -1,0 +1,11 @@
+page-detalles-megates {
+  .toast-success {
+    > div {
+      background-color: #32db64!important;
+    }
+  }
+
+  ion-label {
+    white-space: normal;
+  }
+}

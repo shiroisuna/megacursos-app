@@ -1,0 +1,93 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Reproductor</ion-title>
+    <button ion-button menuToggle item-end>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+<ion-content no-padding #pageTop>
+  <div id="primero">
+  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-md-8 col-12>
+        <div id="myDiv" >
+        </div>
+        <ion-card>
+          <ion-item>
+            <ion-thumbnail item-start >
+              <img src="{{playClase.imagen}}">
+            </ion-thumbnail>
+            <h2> {{playClase.chapter_id}}. {{playClase.sylabus_title}}</h2>
+            <p class="title">{{info.course_type}}. {{info.nombre}}. {{info.maestro}}. {{moduloActual.modulo}}</p>
+          </ion-item>
+          <ion-item>
+            <ion-badge *ngIf="licencia=='true'" style="background: green">Licencia infinita</ion-badge>
+          </ion-item>
+          <ion-card-content>
+            <p class="descri">{{playClase.sylabus_description}}</p>
+
+          </ion-card-content>
+          <ion-row>
+            <ion-col>
+              <button ion-button icon-start clear small>
+                <ion-icon name="thumbs-up"></ion-icon>
+                <div>Ya visto {{playClase.porcentaje}}%</div>
+              </button>
+            </ion-col>
+            <ion-col center text-center>
+              <div style="padding-top:8px">
+                <div class="w3-border">
+                  <div class="w3-grey" style="height:15px;" [ngStyle]="{'width':playClase.porcentaje+'%'  }"></div>
+                </div>
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col  no-padding>
+              <a href="{{playClase.sylabus_class_file_link}}" target="_blank" ion-button icon-start clear small>
+                <ion-icon name="download"></ion-icon>
+                <div>Descarga de archivos de clases</div>
+              </a>
+            </ion-col>
+            <ion-col  no-padding>
+              <a (click)="mensaje()" ion-button icon-start clear small>
+                <ion-icon name="download"></ion-icon>
+                <div>Descarga de archivos en computadoras</div>
+              </a>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </ion-col>
+      <ion-col col-md-4 col-12>
+        <ion-list>
+          <ion-list-header>
+            {{moduloActual.modulo}}
+            <ion-icon name="more" item-end (click)="presentPopover($event)"></ion-icon>
+          </ion-list-header>
+          <ion-item [class.highlight]="selection==i" *ngFor="let clase of moduloActual.clases;let i=index" (click)="openPage(clase.id)" style="">
+            <ion-thumbnail item-start style="align-self:baseline">
+              <img src="{{clase.imagen}}">
+            </ion-thumbnail>
+            <p style="font-weight:bold"> {{indexI+1}}.{{i +1}}|{{clase.sylabus_title}}</p>
+            <ion-row no-padding>
+              <ion-col col-6 >
+                <button ion-button icon-start clear small>
+                  <ion-icon name="thumbs-up"></ion-icon>
+                  <div style="text-transform:none">Ya visto {{clase.porcentaje}}%</div>
+                </button>
+              </ion-col>
+              <ion-col col-6 style="height: 2.1em;font-size: 1.3rem;padding: 1em;">
+                <div class="w3-border" icon-start>
+                  <div class="w3-grey" style="height:15px;" [ngStyle]="{'width':clase.porcentaje+'%'  }"></div>
+                </div>
+              </ion-col>
+            </ion-row>
+            <ion-icon style="color:grey" item-end name="play"></ion-icon>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

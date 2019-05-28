@@ -1,0 +1,84 @@
+page-plan {
+	ion-row {
+		align-items: center;
+		text-align: center;
+	}
+	ion-label{
+	white-space:normal;
+	}
+	@media only screen and (min-width: 768px) {
+		.centro {
+			margin: 0 auto;
+			max-width: 70%;
+		}
+	}
+	@media(max-width:640px) {
+		#movil {
+			display: block;
+		}
+		#desktop{
+			display: none;
+		}
+	}
+	@media(min-width:641px) {
+		#movil {
+			display: block;
+
+		}
+		#desktop{
+			display: block;
+		}
+	}
+	.miplanactual{
+		border:solid  0.5px #ece9e9!important;
+		border-radius:8px !important;
+		padding:8px!important;
+		margin: 3px;
+
+	}
+	.miplancancel{
+		border:solid  0.5px red!important;
+		border-radius:8px !important;
+		padding:8px!important;
+		margin: 3px;
+
+	}
+	.premium{
+		border:solid  1px #daf108!important;
+		border-radius:8px !important;
+		padding:8px!important;
+		margin: 3px;
+	}
+	.supidc {
+		vertical-align: super;
+		/*superindice*/
+		font-size: 12pt;
+		text-transform: uppercase;
+	}
+	.precio {
+		font-size: 1.5rem;
+	}
+
+	.billing {
+		font-size: 1rem;
+	}
+
+	.parrafo {
+		background: black;
+		color: white;
+	}
+
+	.boton {
+		font-size: 1rem;
+	}
+
+	#arriba {
+		align-self: baseline;
+	}
+
+
+
+	.miplan{
+		background-color: #e9e9f5!important;
+	}
+}

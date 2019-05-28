@@ -1,0 +1,47 @@
+page-play {
+ion-label{
+white-space:normal;
+}
+.highlight {
+   background-color: #FFFF33 !important;
+}
+
+h2{
+  color:white;
+}
+
+
+    .alert-md .alert-message {
+            background: red!important;
+        }
+
+.w3-border {
+   border: 1px solid #2E64FE!important;
+   width:40%;
+   border-radius:5px;
+}
+.w3-grey, .w3-hover-grey:hover, .w3-gray, .w3-hover-gray:hover {
+    color: #000!important;
+    background-color: #2E64FE!important;
+}
+.jwplayer{
+position: relative;
+}
+
+.title{
+  text-transform: capitalize;
+}
+.descri{
+  text-align: justify;
+ text-indent: 1rem;
+}
+.fondo{
+}
+.blockContentAS {
+    background: #000;
+    position: absolute;
+    z-index: 9;
+    opacity: .8;
+
+}
+}

@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>megatest</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+<ion-item-group *ngFor="let plan of planes">
+<ion-item-divider color="light">{{plan.nombre_plan}}</ion-item-divider>
+     <ion-item  *ngFor="let curso of plan.curso">
+    <ion-thumbnail item-start>
+      <img src="{{curso.imagen}}">
+    </ion-thumbnail>
+    <h2> {{curso.nombre}}</h2>
+    <h3>{{curso.status}}</h3>
+    <p>Visto {{curso.videos_vistos}} videos de {{curso.totalvideos}} </p>
+    <p>Status</p>
+    <p>nota Maxima</p>
+    <p>intentos realizados</p>
+     <div  item-end>
+      <button ion-button color="secondary"  (click)="menuMegatest($event,curso)">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </div>
+  </ion-item>
+  </ion-item-group>
+<!--
+<div *ngIf="curso.status=='Disponible'" item-end>
+    <button ion-button clear (click)="iniciar(curso)"><ion-icon name="arrow-dropright-circle"></ion-icon>Realizar Megatest</button>
+</div>
+<div *ngIf="curso.intentos.length>0" item-end>
+    <button ion-button clear (click)="detalles(curso)"><ion-icon name="arrow-dropright-circle"></ion-icon>Historial</button>
+</div>
+<div *ngIf="curso.status=='Incompleto'" item-end>
+    <button ion-button clear  ><ion-icon name="arrow-dropright-circle"></ion-icon>Ver Videos</button>
+</div>
+    -->
+
+
+
+
+</ion-content>

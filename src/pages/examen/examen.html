@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Examen Online</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content no-padding>
+  <ion-list style="background: #1b1a1ad9">
+    <ion-item style="background: #1b1a1ad9;color:white">
+      <ion-thumbnail item-start>
+        <img src="{{producto.image}}">
+      </ion-thumbnail>
+      <h3 text-uppercase>{{producto.produc.course_type }}</h3>
+      <h2>{{producto.name}}</h2>
+      <p>{{producto.produc.name}}</p>
+      <ion-thumbnail item-end>
+        <img src="http://mega.com/uploads/images/thumbnails/{{producto.produc.packshot}}">
+      </ion-thumbnail>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item [ngClass]="examen.nota_apreciativa" *ngFor="let examen of examenes;let i=index">
+      <ion-thumbnail item-start>
+        {{i+1}}
+      </ion-thumbnail>
+      <h2>{{examen.nota_apreciativa}}</h2>
+      <h2>{{examen.status}}</h2>
+      <h2> {{examen.nota}}</h2>
+    </ion-item>
+  </ion-list>
+  <ion-fab right bottom>
+    <button ion-fab mini (click)=nuevoTest()>
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>

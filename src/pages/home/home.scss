@@ -1,0 +1,201 @@
+page-home {
+	@media only screen and (min-width: 768px) {
+		.centro {
+			margin: 0 auto;
+			max-width: 90%;
+		}
+	}
+	.max-lines-item {
+  display: block; /* or inline-block */
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow: hidden;
+  max-height: 4.6em;
+  line-height: 1.8em;
+	&:after {
+    content:'...';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
+	.max-lines {
+  display: block; /* or inline-block */
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow: hidden;
+  max-height: 3.6em;
+  line-height: 1.8em;
+	&:after {
+    content:'...';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+.ellipsis-blog {
+  line-height: 1.8em;
+  max-height: 3.6em;
+  overflow: hidden;
+  position: relative;
+  padding-right: 1em;
+  text-align: justify;
+	text-indent: 6px;
+	font-size: 1.2rem;
+  &:after {
+    content:'...';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
+.ellipsis{
+	 line-height: 20px;
+    font-size: 14px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    margin-bottom: 3px;
+    flex-grow: 1;
+}
+.ellipsis-blog:hover {
+  background: rgba(0,0,0,.4);
+  box-shadow: 0 0 0 1rem rgba(0,0,0,.65);
+  max-height: none;
+  overflow: visible;
+}
+.ellipsis-title {
+  line-height: 1.8em;
+  max-height: 3.6em;
+  overflow: hidden;
+  position: relative;
+  padding-right: 1em;
+  text-align: center!important;
+	text-indent: 6px;
+	font-size: 1.3rem;
+}
+
+	.blogg {
+		border: solid 0.8px #c2bfbf!important;
+		border-radius: 10px !important;
+		padding: 6px!important !important;
+		margin: 3px;
+	}
+
+	.xcentro {
+		align-items: center!important;
+		text-align: center!important;
+	}
+
+	.border {
+		border: solid 0.5px #ece9e9!important;
+		border-radius: 8px !important;
+		padding: 10px!important !important;
+	}
+
+	ion-label {
+		white-space: normal;
+	}
+
+	.cuerpo {
+		text-align: justify;
+
+
+	}
+
+	.arriba {
+		align-self: baseline!important;
+	}
+
+	.encabezado {
+		font-weight: bold;
+		text-transform: capitalize;
+		font-size: 1.5rem;
+	}
+.remarca1{
+	padding: 6px;
+}
+	.remarca2:hover {
+		cursor: pointer !important;
+		background-color: #f8f8f8 !important;
+		border-radius: 5px!important;
+	}
+
+	.item ion-thumbnail img {
+		border-radius: 10px!important;
+	}
+
+	.remarca1:hover {
+		cursor: pointer !important;
+		background-color: #f8f8f8 !important;
+		border-radius: 5px!important;
+	}
+
+	.bloggg {
+		border: solid 0.8px #929292!important;
+		border-radius: 8px !important;
+		margin: 2px;
+	}
+
+	.reciente {
+		text-transform: capitalize;
+		color: black;
+		font-size: 1.3rem;
+	}
+
+	.alto {}
+
+	.title {
+		font-weight: bold!important;
+		text-align: center!important;
+		margin: 0!important !important;
+		font-size: 1.3rem;
+	}
+
+	.item-inner {
+		padding-right: 0;
+	}
+
+	.resalte {
+		font-weight: bold;
+	}
+
+	.der {
+		text-align: right;
+	}
+
+	h3 {
+		font-size: 1.5rem!important;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	.bottomborder {
+		border-bottom: 1px solid grey;
+	}
+
+	.ultima {
+		color: #2fb42f;
+		text-align: left;
+		font-size: 1.1rem;
+	}
+
+	.w3-border {
+		border: 1px solid #2E64FE!important;
+		width: 100%;
+		border-radius: 5px;
+	}
+
+	.w3-gray,
+	.w3-grey,
+	.w3-hover-gray:hover,
+	.w3-hover-grey:hover {
+		color: #000!important;
+		background-color: #2E64FE!important;
+	}
+}

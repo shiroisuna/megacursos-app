@@ -1,0 +1,133 @@
+<ion-content no-padding>
+  <ion-row>
+    <ion-col class="xcentro">
+      <h3>Domina lo que quieras de 0 a 100.</h3>
+      <img class="logo" src="assets/imgs/avataricon.png" />
+    </ion-col>
+  </ion-row>
+  <div class="centro">
+    <!--cursos recientes-->
+    <ion-list no-lines *ngIf="total>0">
+      <ion-list-header no-lines style="border-bottom:0.5px solid #ece9e9;">
+        <p class="encabezado">Cursos en progreso</p>
+        <button ion-button item-end clear small (click)="allCourses()">
+          <ion-icon name="thumbs-up"></ion-icon> <span style="text-indent:2px">Ver todos</span>
+        </button>
+      </ion-list-header>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-12 col-sm-6 col-md-6 col-lg-6 *ngFor="let reci of reciente">
+            <ion-item class="blogg remarca1" style="" (click)="getRecientes(reci.clase.id_syllabus_chapter,reci.curso.id)">
+              <ion-thumbnail item-start style=''>
+                <img src="{{url}}/{{reci.curso.image}}">
+              </ion-thumbnail>
+              <div class="alto">
+                <p class="reciente">{{reci.curso.course_type}} <span class="resalte">{{reci.curso.name}}</span> </p>
+                <p class="reciente">{{reci.curso.maestro}}</p>
+              </div>
+              <ion-grid style="z-index:9999">
+                <ion-row>
+                  <ion-col>
+                    <p class="der">{{reci.porcentaje}}</p>
+                  </ion-col>
+                  <ion-col>
+                    <div class="w3-border">
+                      <div class="w3-grey" style="height:20px;" [ngStyle]="{'width':reci.porcentaje  }"></div>
+                    </div>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+              <p class="ultima">"Última clase:{{reci.clase.mc_syllabus_title}}"</p>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <!--cursos sin comenzas-->
+      <ion-list no-lines *ngIf="total==0" padding>
+        <ion-list-header no-lines style="border-bottom:0.5px solid #ece9e9;">
+          <p class="encabezado">Cursos en progreso</p>
+          <button ion-button item-end clear small (click)="allCourses()">
+            <ion-icon name="thumbs-up"></ion-icon> <span style="text-indent:2px">Comienza tu curso ya.!</span>
+          </button>
+        </ion-list-header>
+        <ion-item no-lines class="border">
+          <p style="text-align:justify">Actualmente no has comenzado ningún curso aún. Aquí se mostrarán enlaces directos para continuar cada curso en la clase que lo dejaste. </p>
+        </ion-item>
+      </ion-list>
+    </ion-list>
+    <!--cursos sin comenzas-->
+    <ion-list no-lines *ngIf="total==0" padding>
+      <ion-list-header no-lines style="border-bottom:0.5px solid #ece9e9;">
+        <p class="encabezado">Cursos en progreso</p>
+        <button ion-button item-end clear small (click)="allCourses()">
+          <ion-icon name="thumbs-up"></ion-icon> <span style="text-indent:2px">Comienza tu curso ya.!</span>
+        </button>
+      </ion-list-header>
+      <ion-item no-lines class="border">
+        <p style="text-align:justify">Actualmente no has comenzado ningún curso aún. Aquí se mostrarán enlaces directos para continuar cada curso en la clase que lo dejaste. </p>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-12 col-sm-12 col-md-4 col-lg-4>
+            <ion-item class="remarca1" no-lines style="padding:6px;border-radius: 10px !important;background-color:#fff;border:solid 1px #58d498;" (click)="asistencia()">
+              <ion-thumbnail item-start >
+                <img src="assets/imgs/asistencianew.png" style="">
+              </ion-thumbnail>
+              <p style="font-weight: bold;color:#58d498" class="ellipsis">Asistencia Individual 24h<p>
+                  <p style="color:#7aaf93" class="ellipsis">Si tienes cualquier duda con tu curso, ponte en contacto con nuestro equipo de profesores las 24h del día para que te ayuden.</p>
+                <ion-icon item-end clear name="arrow-forward" style="color:#58d498"></ion-icon>
+            </ion-item>
+          </ion-col>
+        <ion-col col-12 col-sm-12 col-md-4 col-lg-4>
+            <ion-item class="remarca1" no-lines style="padding:6px;border-radius: 10px !important;background-color:#fff;border:solid 1px #e760de;" (click)="examen()" >
+              <ion-thumbnail item-start >
+                <img src="assets/imgs/evaluacionnew.png" style="">
+              </ion-thumbnail>
+              <p style="font-weight: bold;color:#e760de" class="ellipsis ">Examen Final Online<p>
+                  <p style="color:#6f4a72" class="ellipsis">Demuestra que has adquirido los conocimientos con este Megatest regulado por el sistema SecurTest® verificado.</p>
+                  <ion-icon item-end clear name="arrow-forward" style="color:#e760de"></ion-icon>
+            </ion-item>
+          </ion-col>
+          <ion-col col-12 col-sm-12 col-md-4 col-lg-4>
+            <ion-item class="remarca1" no-lines style="padding:6px;border-radius: 10px !important;background-color:#fff;border:solid 1px #4eaad6;" (click)="diploma()" >
+              <ion-thumbnail item-start >
+                <img src="assets/imgs/newdiploma1.png" style="">
+              </ion-thumbnail>
+              <p style="font-weight: bold;color:#4eaad6" class="ellipsis">Diploma Oficial Físico.<p>
+                  <p style="color:#3c6b81" class="ellipsis">Tras aprobar el Examen Final,expediremos y te enviaremos gratis el diploma físico a tu nombre. Es Oficial: puedes añadirlo a tu CV-hoja de vida. </p>
+                  <ion-icon item-end clear name="arrow-forward" style="color:#4eaad6"></ion-icon>
+            </ion-item>
+            </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-list>
+    <ion-list>
+      <ion-list-header no-lines style="border-bottom:0.5px solid #ece9e9;">
+        <p class="encabezado">Blog</p>
+        <a ion-button item-end clear small href="https://blog.megacursos.com/" target="_blank">
+          <ion-icon name="thumbs-up"></ion-icon> <span style="text-indent:2px">Ver todos</span>
+        </a>
+      </ion-list-header>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-12 col-sm-12 col-md-4 col-lg-4 *ngFor="let blog of blogs">
+            <a href="{{blog.enlace}}" target="_blank">
+              <ion-item no-lines class="remarca1" style="border:solid 0.8px #c2bfbf!important;
+            		border-radius:10px !important;
+            		margin: 2px;">
+                <p class="ellipsis title">{{blog.title}}</p>
+                <p class="ellipsis cuerpo">{{blog.body}}</p>
+                <p><a>Ver más</a></p>
+                <ion-thumbnail item-end>
+                  <img src="{{blog.image}}">
+                </ion-thumbnail>
+              </ion-item>
+            </a>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-list>
+  </div>
+</ion-content>

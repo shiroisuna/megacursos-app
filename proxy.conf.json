@@ -1,0 +1,7 @@
+{
+    "/api/*": {
+        "target": "https://megacursos.com/api",
+        "secure": false,
+        "changeOrigin": true
+    }
+}

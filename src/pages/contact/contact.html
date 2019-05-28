@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Mi Perfil
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="presentPopover($event)">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <div class="centro">
+    <div id="content">
+      <div id="profile-info">
+        <img id="profile-image" src="assets/imgs/avatar.png">
+        <h3 id="profile-name">{{nombre}}</h3>
+        <span id="profile-description">{{dato}}</span>
+      </div>
+      <ion-list padding *ngIf="planes.tipo=='gratis'" style="padding-top:10px">
+        <ion-item class="miplan remarca1">
+          <h2>Plan Actual: {{planes.nombre}}</h2>
+          <p>Ahora no tienes acceso a los cursos.Sube de plan para poder ver sin límites TODOS los megacursos de 0 a 100.</p>
+          <button ion-button item-end (click)="subePlan()">Sube de plan</button>
+        </ion-item>
+      </ion-list>
+      <ion-list padding *ngIf="planes.status=='canceled'" style="padding-top:10px">
+        <ion-item class="miplancancel remarca1">
+          <h2>Plan Actual: <span style="text-transform:capitalize">{{planes.tipo}}</span></h2>
+          <p>El status del plan es cancelado.</p>
+          <p>Ahora no tienes acceso a los cursos.</p>
+          <p>Valida tu plan para poder ver sin límites TODOS los megacursos de 0 a 100.</p>
+          <button ion-button item-end (click)="subePlan()">Activa tu plan</button>
+          <!--<button ion-button item-end  (click)="subePlan()">Sube de plan</button>-->
+        </ion-item>
+      </ion-list>
+      <!--normal Mensual-->
+      <ion-list padding *ngIf="planes.tipo=='normal' && planes.status=='activo' " style="padding-top:10px">
+        <ion-item class="normal remarca1">
+          <h2>Plan Actual: <span style="text-transform:capitalize">{{planes.tipo}}</span></h2>
+          <p>Sube al plan Premium para poder disfrutar de asistencia individual 24h de tu profesor y recibir diplomas físicos sellados gratis a tu domicilio que acreditan tu formación. </p>
+
+          <button ion-button item-end (click)="subePlan()">Sube de plan</button>
+          <!--<button ion-button item-end  (click)="subePlan()">Sube de plan</button>-->
+        </ion-item>
+      </ion-list>
+      <ion-list padding *ngIf="planes.tipo=='premium' && planes.status=='activo' " style="padding-top:10px">
+        <ion-item class="premium remarca1">
+          <h2>Plan Actual: <span style="text-transform:capitalize">{{planes.tipo}}</span></h2>
+          <p>Asistencia individual 24h de tu profesor</p>
+          <p>Diplomas físicos sellados gratis a tu domicilio que acreditan tu formación. </p>
+          <!--<button ion-button item-end  (click)="subePlan()">Sube de plan</button>-->
+        </ion-item>
+      </ion-list>
+      <ion-grid>
+        <ion-row>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12 col-sm-12 col-md-12 col-lg-12>
+            <ion-item color="primary" (click)='logout()' no-lines class="remarca1" style="	border:solid  0.5px #ece9e9!important;
+                    border-radius:8px !important;
+                    margin: 2px;">
+              <p style="" class="title">Cerrar Sesión</p>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <!--
+        <ion-row  *ngIf="myaccount=='true'">
+          <ion-col col-12 col-sm-12 col-md-12 col-lg-12>
+            <a block target="_blank" href="https://megacursos.com/api/users/autologin/{{idUsuario}}">
+              <ion-item color="primary" no-lines class="remarca1" style="	border:solid  0.5px #ece9e9!important;
+                    border-radius:8px !important;
+                    margin: 2px;">
+                <p style="" class="title">Ir a Antiguo my-account</p>
+              </ion-item>
+            </a>
+          </ion-col>
+        </ion-row>
+        -->
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>

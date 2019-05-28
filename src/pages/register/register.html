@@ -1,0 +1,38 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Crear Cuenta</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<div class="centro">
+<ion-list no-lines>
+    <ion-item>
+      <ion-label>Nombre:</ion-label>
+      <ion-input  type="text"  name="firstname" #firstname></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Apellido:</ion-label>
+      <ion-input type="text"  name="lastname" #lastname></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Email:</ion-label>
+      <ion-input type="email"  name="email" #email></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Contraseña:</ion-label>
+      <ion-input type="password"  name="password" #password></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Confirmar contraseña:</ion-label>
+      <ion-input type="password"  name="confirm" #confirm></ion-input>
+    </ion-item>
+    <button ion-button round outline block (click)="signUp()">Crear Cuenta Gratis</button>
+
+  </ion-list>
+ </div>
+</ion-content>

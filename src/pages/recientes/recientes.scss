@@ -1,0 +1,36 @@
+page-recientes {
+  ion-label {
+    white-space: normal;
+  }
+
+  .highlight {
+    background-color: #FFFF33 !important;
+  }
+
+  .activa {
+    background-color: blue!important;
+  }
+
+  .w3-border {
+    border: 1px solid rgb(72, 138, 255)!important;
+    width: 60%;
+    border-radius: 5px;
+  }
+
+  .w3-gray,
+  .w3-grey,
+  .w3-hover-gray:hover,
+  .w3-hover-grey:hover {
+    color: #000!important;
+    background-color: rgb(72, 138, 255)!important;
+  }
+
+  .title {
+    text-transform: capitalize;
+  }
+
+  .descri {
+    text-align: justify;
+    text-indent: 1rem;
+  }
+}

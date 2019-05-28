@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "934438364126",
+    "firebase_url": "https://megacursos-app.firebaseio.com",
+    "project_id": "megacursos-app",
+    "storage_bucket": "megacursos-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:934438364126:android:a23cfbba249a0b0b",
+        "android_client_info": {
+          "package_name": "com.megacusosoficial.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "934438364126-5aj4etun6d8cu7g1fjo2ftfuo0vuma82.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBW0NHJlHYYn_1t7k5cCtxYr0b2sVx87wA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

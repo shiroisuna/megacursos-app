@@ -1,0 +1,12 @@
+ <ion-list >
+    <ion-item  *ngFor="let modulo of modulos;let i=index" (click)="enviar(i)" style="font-size: 1.5rem">
+      <a href="https://megacursos.box.com/v/archivosclases" target="_blank" *ngIf="modulo.accion=='gratis'">
+        <ion-icon item start name={{modulo.icon}}></ion-icon>
+    {{modulo.menu}}
+    </a>
+    <a *ngIf="modulo.accion!='gratis'">
+      <ion-icon item start name={{modulo.icon}}></ion-icon>
+  {{modulo.menu}}
+  </a>
+    </ion-item>
+</ion-list>

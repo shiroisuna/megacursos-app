@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Megatest {{curso.slug}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      Restante: {{restante}}
+    </ion-item>
+  </ion-list>
+  <ion-item-group>
+    <ion-item-divider color="light">
+      <h2 style="text-align:justify">{{preguntas.numpregunta}}/{{preguntas.cantidadPreguntas}} {{preguntas.pregunta}}</h2>
+    </ion-item-divider>
+    <ion-item *ngFor="let respuesta of preguntas.respuestas">
+      <p style="text-align:justify">{{respuesta.respuesta}}</p>
+
+      <ion-thumbnail item-end>
+        <button ion-button ion-button small (click)="comprobar(respuesta.id)">
+          <ion-icon name="checkmark-circle"></ion-icon>
+        </button>
+      </ion-thumbnail>
+    </ion-item>
+  </ion-item-group>
+</ion-content>

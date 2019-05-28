@@ -1,0 +1,47 @@
+<ion-content padding class="transparent-header" style="background-image:url(assets/imgs/fondo.jpg)">
+  <div padding>
+
+    <ion-row>
+      <ion-col>
+        <img class="logo" src="https://megacursos.com/themes/megacursos/assets/images/logo.png" />
+      </ion-col>
+    </ion-row>
+    <ion-row no-padding>
+      <ion-col no-padding>
+        <ion-list inset class="no-border" no-padding>
+          <ion-item no-padding>
+            <ion-label>Email</ion-label>
+            <ion-input type="text" name="email" #email></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Password</ion-label>
+            <ion-input type="password" name="password" #password (keypress)="eventHandler($event.keyCode)"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <p style="text-align:center;font-size:1.1em!important;font-weigth:bold!important;text-transform: none;color:white; background-color: rgba(0, 0, 0, 0.12);" id="login-recuperar" (click)="resetPassword()"> Recuperar contraseña</p>
+
+        <button ion-button block round (click)="signIn()">Login</button>
+        <br>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div (click)="goToSignup()">
+          <p style="font-size:1.3em!important;font-weigth:bold!important;text-transform: none;color:white; background-color: rgba(0, 0, 0, 0.12);">Crear Cuenta Gratis</p>
+  <p style="font-size:1em!important;font-weigth:bold!important;text-transform: none;color:white; background-color: rgba(0, 0, 0, 0.12);">Previsualiza TODOS los megacursos de 0 a 100</p>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+
+      </ion-col>
+    </ion-row>
+
+  </div>
+</ion-content>

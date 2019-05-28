@@ -1,0 +1,67 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Mi plan</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <div class="centro">
+
+    <ion-list *ngIf="planes.tipo=='gratis'">
+      <ion-item class="miplan remarca1">
+        <h2>Plan Actual: Gratis</h2>
+        <p>Ahora no tienes acceso acceso a los cursos.Sube de plan para poder ver sin limites TODOS los megacursos de 0 a 100.</p>
+        <button ion-button item-end (click)="subePlan()">Sube de plan</button>
+      </ion-item>
+    </ion-list>
+
+    <ion-list no-lines *ngIf="planes.pay=='pago'">
+      <ion-card>
+        <ion-card-title>
+          <h1 text-center>Detalles del plan</h1>
+        </ion-card-title>
+        <ion-card-content>
+          <ion-item>
+            <ion-icon item-start name="checkmark"></ion-icon>
+            <ion-label>Suscripción: <span style="text-transform:capitalize">{{planes.tipo}}</span></ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-icon item-start name="checkmark"></ion-icon>
+            <ion-label>Número de pedido: {{planes.order}}</ion-label>
+          </ion-item>
+          <!--
+          <ion-item>
+            <ion-icon item-start name="checkmark"></ion-icon>
+            <ion-label>Monto total: <span class="mayus">{{planes.mount}} </span></ion-label>
+          </ion-item>
+          -->
+          <ion-item>
+            <ion-icon item-start name="checkmark"></ion-icon>
+            Status: {{planes.status}}
+          </ion-item>
+          <!--
+          <ion-item>
+            <ion-icon item-start name="checkmark"></ion-icon>
+            Fecha de inicio: {{planes.start}}
+          </ion-item>
+          -->
+          <!--
+      <ion-item>
+          <ion-icon item-start name="checkmark"></ion-icon>
+        Proximo pago: {{planes.end}}
+      </ion-item>
+      <ion-item>
+          <ion-icon item-start name="checkmark"></ion-icon>
+        Intervalo: {{planes.interval}}
+      </ion-item>
+      -->
+        </ion-card-content>
+      </ion-card>
+      <ion-item>
+        <h2>Si tiene dudas o sugerencias escriba a atencion@megacursos.com</h2>
+      </ion-item>
+
+    </ion-list>
+  </div>
+
+</ion-content>

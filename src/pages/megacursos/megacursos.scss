@@ -1,0 +1,116 @@
+page-megacursos {
+  ion-label {
+    white-space: normal;
+  }
+
+  h3,
+  h4 {
+    text-align: center;
+  }
+
+  ion-item {
+    background-color: blue;
+  }
+
+  .item ion-thumbnail img {
+    width: 56px;
+    height: 30px;
+  }
+
+  .item ion-thumbnail {
+    min-height: 50px;
+  }
+
+  .remarca:hover {
+    cursor: pointer !important;
+    font-weight: bold !important;
+  }
+
+  #peq {
+    max-width: 1rem;
+    min-width: 3rem;
+  }
+
+  #peqq {
+    max-width: 1rem;
+    min-width: 3rem;
+  }
+
+  #peq1 {
+    max-width: 1rem;
+    min-width: 3rem;
+  }
+
+  #categ {
+    color: #b3bea9;
+    font-weight: bold;
+  }
+
+  .texto {
+    color: #5d5d5d;
+  }
+
+  .masters {
+    background-color: white;
+  }
+
+  .buscar {
+    background-color: #d8d8d8;
+  }
+
+  #title {
+    background-image: linear-gradient(#929f21,#646d17, #2b2c28);
+  }
+
+  .licencia {
+    font-weight: bold;
+    color: green;
+  }
+
+  #titulo {
+    font-size: 2.5rem;
+    color: #dcf349;
+    font-weight: bold;
+  }
+
+  #plan {
+    font-size: 1.5rem;
+    color: #edf463;
+    border-radius: 3px;
+    border: solid 2px #edf463;
+    padding: 3px;
+  }
+
+  ion-row {
+    align-items: center;
+    text-align: center;
+  }
+
+  .sub {
+    color: #8aa37b;
+  }
+
+  .child-item {
+    background: #f3f2f1;
+    padding: 0;
+  }
+
+  .label {
+    margin: 0;
+  }
+
+  .list {
+    margin-bottom: 0;
+  }
+
+  .item-inner {
+    padding-right: 0;
+  }
+  @media only screen and (min-width: 768px) {
+    .centro {
+      text-center: auto;
+      margin: auto;
+      max-width: 60%;
+    }
+  }
+}

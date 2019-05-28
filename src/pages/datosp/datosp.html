@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Mis datos</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <div padding>
+    <ion-row>
+      <ion-col>
+        <img class="logo" src="assets/imgs/avataricon.png" />
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list inset class="no-border">
+          <ion-item>
+            <ion-label>Nombre</ion-label>
+            <ion-input type="text" name="name" #name></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Apellido</ion-label>
+            <ion-input type="text" name="lastname" #lastname></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Email</ion-label>
+            <ion-input type="text" name="email" #email disabled></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Password</ion-label>
+            <ion-input type="password" name="pass" #pass autocompleto='off'></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Confirme Password</ion-label>
+            <ion-input type="text" name="pass1" #pass1 autocompleto='off'></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button ion-button class="login-button" (click)="update()">Actualizar</button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row style="text-align: left;padding-top:30px">
+      <ion-col>
+        <p (click)="plan()" style="">Mi plan</p>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>

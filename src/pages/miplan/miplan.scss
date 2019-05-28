@@ -1,0 +1,20 @@
+page-miplan {
+.mayus{
+text-transform:uppercase;
+}
+ion-label{
+white-space:normal;
+}
+.miplan{
+  border:solid  0.5px #ece9e9!important;
+  border-radius:8px !important;
+  padding:8px!important;
+  margin: 3px
+}
+@media only screen and (min-width: 768px) {
+ .centro {
+   margin: 0 auto;
+   max-width: 50%;
+ }
+}
+}

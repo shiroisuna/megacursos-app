@@ -1,0 +1,262 @@
+
+<ion-content padding>
+  <ion-row class="centro">
+
+    <ion-col>
+      <ion-list *ngIf="actual.status=='gratis'" style="padding-top:10px">
+        <ion-item class="miplanactual">
+          <h2>Plan Actual: {{actual.nombre}}</h2>
+          <p>Ahora no tienes acceso a los cursos.</p>
+          <p>Sube de plan para poder ver sin límites TODOS los megacursos de 0 a 100.</p>
+        </ion-item>
+      </ion-list>
+      <ion-list *ngIf="actual.status=='canceled'" style="padding-top:10px">
+        <ion-item class="miplancancel">
+          <h2>Plan Actual: <span style="text-transform:capitalize">{{actual.tipo}}</span></h2>
+          <p>El status del plan es cancelado</p>
+          <p>Ahora no tienes acceso a los cursos.</p>
+          <p>Valida tu plan para poder ver sin límites TODOS los megacursos de 0 a 100.</p>
+        </ion-item>
+      </ion-list>
+      <ion-list *ngIf="actual.tipo=='normal' && actual.status=='activo' " style="padding-top:10px">
+        <ion-item class="miplanactual">
+          <h2>Plan Actual: <span style="text-transform:capitalize">{{actual.tipo}}</span></h2>
+          <p>Sube al plan Premium para poder disfrutar de asistencia individual 24h de tu profesor y recibir diplomas físicos sellados gratis a tu domicilio que acreditan tu formación. </p>
+        </ion-item>
+      </ion-list>
+      <ion-list *ngIf="actual.tipo=='premium' && actual.status=='activo' " style="padding-top:10px">
+        <ion-item class="premium">
+          <h2>Plan Actual: <span style="text-transform:capitalize">{{actual.tipo}}</span></h2>
+          <p>Asistencia individual 24h de tu profesor</p>
+          <p>Diplomas físicos sellados gratis a tu domicilio que acreditan tu formación. </p>
+        </ion-item>
+      </ion-list>
+      <!--
+      <button ion-button (click)="testcompra()">Test</button>
+      -->
+    </ion-col>
+  </ion-row>
+  <div class="centro">
+    <ion-segment [(ngModel)]="pet">
+      <ion-segment-button value="ax" (ionSelect)="update('1')" >
+        Anual <span class="oferta">-30%</span>
+      </ion-segment-button>
+      <ion-segment-button  value="tx" (ionSelect)="update('2')" id="trimestralxx">
+        Trimestral <span class="oferta">-15%</span>
+      </ion-segment-button>
+      <ion-segment-button value="mx" (ionSelect)="update('0')">
+        Mensual
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  <div class="centro">
+    <div id="movil">
+      <ion-grid no-padding>
+        <ion-row>
+          <!--anual-->
+          <ion-col col-lg-12 col-md-12 col-sm-12 col-12>
+            <ion-toolbar [(ngModel)]="anualx" *ngIf="pet=='ax'">
+              <ion-segment color="secondary">
+                <ion-segment-button value="apremium">
+                  Premium
+                </ion-segment-button>
+                <ion-segment-button value="anormal">
+                  Normal
+                </ion-segment-button>
+              </ion-segment>
+            </ion-toolbar>
+            <!--mensual-->
+            <ion-toolbar [(ngModel)]="mensualx" *ngIf="pet=='mx'">
+              <ion-segment>
+                <ion-segment-button value="mpremium">
+                  Premium
+                </ion-segment-button>
+                <ion-segment-button value="mnormal">
+                  Normal
+                </ion-segment-button>
+              </ion-segment>
+            </ion-toolbar>
+            <ion-toolbar [(ngModel)]="trimestralx" *ngIf="pet=='tx'">
+              <ion-segment>
+                <ion-segment-button value="tpremium">
+                  <span class="oferta">Premium</span>
+                </ion-segment-button>
+                <ion-segment-button value="tnormal">
+                <span class="oferta">  Normal</span>
+                </ion-segment-button>
+              </ion-segment>
+            </ion-toolbar>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-lg-12 col-md-12 col-sm-12 col-12 *ngFor="let planc of planx">
+            <ion-card *ngIf="planc.nombre=='Premium Anual' && anualx=='apremium'">
+              <ion-card-header>
+                {{planc.nombre}}
+              </ion-card-header>
+              <ion-card-content>
+                <p>
+                  <span class="precio">{{precio_anual_premium}}</span>
+                </p>
+                <button *ngIf="planc.status.suscribe=='true'" ion-button (click)="purchase(planc.idPlan,planc.id_externo)">
+                  <ion-icon name="thumbs-up"></ion-icon>&nbsp; ¡Comienza ya!
+                </button>
+                <button *ngIf="planc.status.miplan=='true'" ion-button outline>
+                  <ion-icon name="thumbs-up"></ion-icon>&nbsp; ¡Plan Actual!
+                </button>
+                <button *ngIf="planc.status.upgrade=='true'" ion-button >
+                  <ion-icon name="thumbs-up"></ion-icon>&nbsp; ¡Sube de plan!
+                </button>
+
+                <p>Detalles del plan</p>
+                <hr>
+                <ion-list>
+                  <ion-item *ngFor="let pla of planc.descripcion.detalle" style="padding:0;margin:0">
+                    <ion-icon item-start name="checkmark"></ion-icon>
+                    <p style="padding-bottom:3px!important;padding-top:3px!important;margin:0!important"> {{pla}}.</p>
+                  </ion-item>
+                </ion-list>
+              </ion-card-content>
+            </ion-card>
+            <!--premium mensual-->
+            <ion-card *ngIf="planc.nombre=='Premium Mensual' && mensualx=='mpremium'">
+              <ion-card-header>
+                {{planc.nombre}}
+              </ion-card-header>
+              <ion-card-content>
+                <p>
+                  <span class="precio">{{precio_mensual_premium}}</span>
+                </p>
+                <button *ngIf="planc.status.suscribe=='true'" ion-button (click)="purchase(planc.idPlan,planc.id_externo)">
+                  <ion-icon name="thumbs-up"></ion-icon>&nbsp; ¡Comienza ya!
+                </button>
+                <button *ngIf="planc.status.miplan=='true'" ion-button outline>
+                  <ion-icon name="thumbs-up"></ion-icon>&nbsp; ¡Plan Actual!
+                </button>
+                <button *ngIf="planc.status.upgrade=='true'" ion-button >
+                  <ion-icon name="thumbs-up"></ion-icon>&nbsp; ¡Sube de plan!
+                </button>
+                <p>Detalles del plan</p>
+                <hr>
+                <ion-list>
+                  <ion-item *ngFor="let pla of planc.descripcion.detalle" style="padding:0;margin:0">
+                    <ion-icon item-start name="checkmark"></ion-icon>
+                    <p style="padding-bottom:3px!important;margin:0!important"> {{pla}}.</p>
+                  </ion-item>
+                </ion-list>
+              </ion-card-content>
+            </ion-card>
+            <!--normal anual-->
+            <ion-card *ngIf="planc.nombre=='Normal Anual' && anualx=='anormal'">
+              <ion-card-header>
+                {{planc.nombre}}
+              </ion-card-header>
+              <ion-card-content>
+                <p>
+                  <span class="precio">{{precio_anual_normal}}</span>
+                </p>
+                <button *ngIf="planc.status.suscribe=='true'" ion-button (click)="purchase(planc.idPlan,planc.id_externo)">
+                  <ion-icon name="thumbs-up"></ion-icon>&nbsp; ¡Comienza ya!
+                </button>
+                <button *ngIf="planc.status.miplan=='true'" ion-button outline>
+                  <ion-icon name="thumbs-up"></ion-icon>&nbsp; ¡Plan Actual!
+                </button>
+                <button *ngIf="planc.status.upgrade=='true'" ion-button >
+                  <ion-icon name="thumbs-up"></ion-icon>&nbsp; ¡Sube de plan!
+                </button>
+                <p>Detalles del plan</p>
+                <hr>
+                <ion-list>
+                  <ion-item *ngFor="let pla of planc.descripcion.detalle" style="padding:0;margin:0">
+                    <ion-icon item-start name="checkmark"></ion-icon>
+                    <p style="padding-bottom:3px!important;margin:0!important"> {{pla}}.</p>
+                  </ion-item>
+                </ion-list>
+              </ion-card-content>
+            </ion-card>
+            <!--normal mensual-->
+            <ion-card *ngIf="planc.nombre=='Normal Mensual' && mensualx=='mnormal'">
+              <ion-card-header>
+                {{planc.nombre}}
+              </ion-card-header>
+              <ion-card-content>
+                <p>
+                  <span class="precio">{{precio_mensual_normal}}</span>
+                </p>
+                <button *ngIf="planc.status.suscribe=='true'" ion-button (click)="purchase(planc.idPlan,planc.id_externo)">
+                  <ion-icon name="thumbs-up"></ion-icon>&nbsp; ¡Comienza ya!
+                </button>
+                <button *ngIf="planc.status.miplan=='true'" ion-button outline>
+                  <ion-icon name="thumbs-up"></ion-icon>&nbsp; ¡Plan Actual!
+                </button>
+                <button *ngIf="planc.status.upgrade=='true'" ion-button >
+                  <ion-icon name="thumbs-up"></ion-icon>&nbsp; ¡Sube de plan!
+                </button>
+                <p>Detalles del plan</p>
+                <hr>
+                <ion-list>
+                  <ion-item *ngFor="let pla of planc.descripcion.detalle" style="padding:0;margin:0">
+                    <ion-icon item-start name="checkmark"></ion-icon>
+                    <p style="padding-bottom:3px!important;margin:0!important"> {{pla}}.</p>
+                  </ion-item>
+                </ion-list>
+              </ion-card-content>
+            </ion-card>
+            <!--trimestral normal-->
+            <ion-card *ngIf="planc.nombre=='Normal Trimestral' && trimestralx=='tnormal'">
+              <ion-card-header>
+                {{planc.nombre}}
+              </ion-card-header>
+              <ion-card-content>
+                <p>
+                  <span class="precio">{{precio_trimestral_normal}}</span>
+                </p>
+                <button *ngIf="planc.status.suscribe=='true'" ion-button (click)="purchase(planc.idPlan,planc.id_externo)">
+                  <ion-icon name="thumbs-up"></ion-icon>&nbsp; ¡Comienza ya!
+                </button>
+                <button *ngIf="planc.status.miplan=='true'" ion-button outline> Plan Actual</button>
+                <button *ngIf="planc.status.upgrade=='true'" ion-button (click)="subePlan(planc.idPlan,planc.idPlanstripe,planc.nombre,planc.preciox,planc.currency)">
+                  <ion-icon name="thumbs-up"></ion-icon>&nbsp; Sube de plan
+                </button>
+                <p>Detalles del plan</p>
+                <hr>
+                <ion-list>
+                  <ion-item *ngFor="let pla of planc.descripcion.detalle" style="padding:0;margin:0">
+                    <ion-icon item-start name="checkmark"></ion-icon>
+                    <p style="padding-bottom:3px!important;margin:0!important"> {{pla}}.</p>
+                  </ion-item>
+                </ion-list>
+              </ion-card-content>
+            </ion-card>
+  <!--trimestral premium-->
+            <ion-card *ngIf="planc.nombre=='Premium Trimestral' && trimestralx=='tpremium'">
+              <ion-card-header>
+                {{planc.nombre}}
+              </ion-card-header>
+              <ion-card-content>
+                <p>
+                  <span class="precio">{{precio_trimestral_premium}}</span>
+                </p>
+                <button *ngIf="planc.status.suscribe=='true'" ion-button (click)="purchase(planc.idPlan,planc.id_externo)">
+                  <ion-icon name="thumbs-up"></ion-icon>&nbsp; ¡Comienza ya!
+                </button>
+                <button *ngIf="planc.status.miplan=='true'" ion-button outline> Plan Actual</button>
+                <button *ngIf="planc.status.upgrade=='true'" ion-button (click)="subePlan(planc.idPlan,planc.idPlanstripe,planc.nombre,planc.preciox,planc.currency)">
+                  <ion-icon name="thumbs-up"></ion-icon>&nbsp; Sube de plan
+                </button>
+                <p>Detalles del plan</p>
+                <hr>
+                <ion-list>
+                  <ion-item *ngFor="let pla of planc.descripcion.detalle" style="padding:0;margin:0">
+                    <ion-icon item-start name="checkmark"></ion-icon>
+                    <p style="padding-bottom:3px!important;margin:0!important"> {{pla}}.</p>
+                  </ion-item>
+                </ion-list>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,145 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{producto.name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content id="fondo" #pageTop>
+  <div class="centro">
+    <ion-grid no-padding>
+      <ion-row>
+        <ion-col col-2 id="arriba" no-padding>
+          <ion-card no-padding>
+            <img src="{{producto.image}}" />
+          </ion-card>
+        </ion-col>
+        <ion-col col-6>
+          <h3 text-uppercase class="espacio-bottom">{{producto.produc.course_type }}</h3>
+          <h2 class="espacio" style="font-size: 2rem">{{producto.name}}</h2>
+          <p class="espacio">{{producto.produc.name}}</p>
+          <p>
+            <br>
+            <br>
+            <ion-badge *ngIf="producto.produc.licencia=='true'" style="background: green">Licencia infinita</ion-badge>
+          </p>
+          <ion-grid no-padding>
+            <ion-row>
+              <ion-col col-6>
+                <ion-badge style="background: #488aff" (click)="tema('temario')">Reproducir</ion-badge>
+                <!--
+            <a  href="#temario" ion-button color="primary" round small style="padding: 0 0.6rem;">Reproducir</a>
+            -->
+              </ion-col>
+              <ion-col col-6>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-col>
+        <ion-col col-4>
+          <img src="{{producto.produc.packshot}}" style="background: #403f3f;border:none" />
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <br>
+    <ion-list>
+      <ion-item no-lines style="background:#403f3f;color:white; ">
+        {{hora}}
+        <span item-end>
+          de 0 a 100
+        </span>
+      </ion-item>
+    </ion-list>
+    <ion-slides class="image-slider" paginationType="fraction" parallax="true"  slidesPerView="1.5">
+      <ion-slide *ngFor="let slide of sliders">
+        <img src="{{direccion}}/{{slide.filename}}" style="border-radius: 10px;padding: 20px">
+      </ion-slide>
+    </ion-slides>
+    <ion-list style="background:#403f3f;color:white; ">
+      <ion-item padding style="background:#403f3f;color:white;padding-top: 5px;border-bottom:solid 1px white;border-top:solid 1px white">
+        <p id="descri" style="text-align: justify;color: white">{{descripcionDiv}}{{puntos}}<span (click)="onButtonClick()" class="extra">{{nombreBoton}}</span></p>
+      </ion-item>
+    </ion-list>
+    <br>
+    <!-- Sliser-->
+    <h1 padding style="color:white;padding-bottom: 0px"> Temario</h1>
+    <a id="temario"></a>
+    <ion-list class="accordion-list" style="background: #403f3f;border-radius: 3px;padding-top: 2px" padding>
+      <ion-list-header *ngFor="let tema of temario; let i = index" no-padding no-lines style="margin-top:10px;background: #403f3f">
+        <button style="margin-left:10px;margin-right: 10px;border-radius: 5px;width: 95%;text-align: left;padding: 5px" (click)="toggleSection(i)" detail-none [ngClass]="{'section-active': tema.open, 'section': !tema.open}">
+          <ion-icon item-left name="arrow-forward" *ngIf="!tema.open"></ion-icon>
+          <ion-icon item-left name="arrow-down" *ngIf="tema.open"></ion-icon>
+          {{i+1}}.{{ tema.titulo }}
+        </button>
+        <ion-list *ngIf="tema.videos && tema.open">
+          <ion-list *ngFor="let video of tema.videos; let j = index" no-padding style="padding-bottom:0px;padding-top:0px;background: #1b1a1ad9">
+            <ion-item *ngIf="!video.children" (click)="play(video,tema,j+1)" ion-item detail-none class="child-item" no-padding style="border-radius:0px;border-bottom:solid 2px grey;color: white;background: #403f3f">
+              <ion-thumbnail item-start id="peqq" style="align-self:baseline">
+                <img src="{{video.logo_image}}">
+              </ion-thumbnail>
+              <h3 style="text-transform:none;margin-top:0.5rem">{{i+1}}|{{j+1}}.{{video.sylabus_title}}</h3>
+                    <ion-grid no-padding>
+                <ion-row no-padding >
+                  <ion-col col-7 >
+                    <button ion-button icon-start clear small>
+                      <ion-icon name="thumbs-up" col-5 style="color:white"></ion-icon>
+                      <div style="color:white;text-transform:none">Ya visto {{video.porcentaje}}%</div>
+                    </button>
+                  </ion-col>
+                  <ion-col col-5 style="height: 2.1em;font-size: 1.3rem;padding: 1em;">
+                    <div class="w3-border" icon-start>
+                      <div class="w3-grey" style="height:15px;" [ngStyle]="{'width':video.porcentaje+'%'  }"></div>
+                    </div>
+                  </ion-col>
+                  <ion-col col-2>
+                  </ion-col>
+                </ion-row>
+                <ion-row no-padding *ngIf="video.gratis=='1'">
+                  <ion-col col-12>
+                    <ion-badge color="primary">!Pruébala Gratis.!</ion-badge>
+                  </ion-col>
+                  </ion-row>
+              </ion-grid>
+              <ion-icon item-end name="play"></ion-icon>
+            </ion-item>
+          </ion-list>
+        </ion-list>
+      </ion-list-header>
+    </ion-list>
+    <ion-list style="margin-left:25px;margin-right: 25px;padding:10px">
+      <ion-item style="padding:10px;border-radius: 20px !important;background-color:#1f4d17;border:solid 2px #1f4d17;" (click)="asistencia()" class="hover-list">
+        <ion-thumbnail item-start class="gran">
+          <img src="assets/imgs/asistencianew.png" style="width:initial!important;height:initial!important">
+        </ion-thumbnail>
+        <p style="font-weight: bold;color:#4aaa4c">Asistencia Individual 24h<p>
+            <p style="color:#597c30">Si tienes cualquier duda con tu curso, ponte en contacto con nuestro equipo de profesores las 24h del día para que te ayuden</p>
+            <!--
+          <button ion-button clear item-end (click)="play(video)"><ion-icon name="arrow-dropright-circle" style="color: white"></ion-icon></button>-->
+            <ion-icon item-end clear name="arrow-forward" style="color:white"></ion-icon>
+      </ion-item>
+    </ion-list>
+
+    <ion-list style="margin-left:25px;margin-right: 25px;padding:10px">
+      <ion-item style="padding:10px;border-radius: 20px !important;background-color:#47233f;border:solid 2px #47233f;" (click)="examen()" class="hover-list">
+        <ion-thumbnail item-start class="gran">
+          <img src="assets/imgs/evaluacionnew.png" style="width:initial!important;height:initial!important">
+        </ion-thumbnail>
+        <p style="font-weight: bold;color:#e760de">Examen Final Online<p>
+            <p style="color:#6f4a72">Demuestra que has adquirido los conocimientos con este Megatest regulado por el sistema SecurTest® verificado</p>
+            <!--
+          <button ion-button clear item-end (click)="play(video)"><ion-icon name="arrow-dropright-circle" style="color: white"></ion-icon></button>-->
+            <ion-icon item-end clear name="arrow-forward" style="color:white"></ion-icon>
+      </ion-item>
+    </ion-list>
+    <ion-list style="margin-left:25px;margin-right: 25px;padding:10px">
+      <ion-item style="padding:10px;border-radius: 20px !important;background-color:#0d3c4b;border:solid 2px #0d3c4b;" (click)="diploma()" class="hover-list">
+        <ion-thumbnail item-start class="gran">
+          <img src="assets/imgs/newdiploma1.png" style="width:initial!important;height:initial!important">
+        </ion-thumbnail>
+        <p style="font-weight: bold;color:#4eaad6">Diploma Oficial Físico.<p>
+            <p style="color:#3c6b81">Tras aprobar el Examen Final,expediremos y te enviaremos gratis el diploma físico a tu nombre. Es Oficial: puedes añadirlo a tu CV-hoja de vida. </p>
+            <!--
+          <button ion-button clear item-end (click)="play(video)"><ion-icon name="arrow-dropright-circle" style="color: white"></ion-icon></button>-->
+            <ion-icon item-end clear name="arrow-forward" style="color:white"></ion-icon>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
