@@ -11,6 +11,7 @@ import { RegisterPage } from '../pages/register/register';
 import { MegacursosPage } from '../pages/megacursos/megacursos';
 // ------------ Aca esta mi import JAMP
 import { GrupoPage } from '../pages/grupo/grupo';
+import { CommentsPage } from '../pages/comments/comments';
 // ------------ Aca esta mi import JAMP
 import { AsistenciaPage } from '../pages/asistencia/asistencia';
 import { MegatestPage } from '../pages/megatest/megatest';
@@ -34,6 +35,9 @@ import { RecientesPage } from '../pages/recientes/recientes';
 import { InAppPurchase2 } from '@ionic-native/in-app-purchase-2';
 import { Push, PushObject, PushOptions } from '@ionic-native/push/ngx';
 
+// import { ComponentsExpandableComponent } from "../components/components-expandable/components-expandable";
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -52,6 +56,7 @@ import { Push, PushObject, PushOptions } from '@ionic-native/push/ngx';
     RegisterPage,
     MegacursosPage,
     GrupoPage,
+    CommentsPage,
     ProductPage,
     PlayPage,
     PlanPage1,
@@ -59,6 +64,7 @@ import { Push, PushObject, PushOptions } from '@ionic-native/push/ngx';
     ExamenPage,
     RecientesPage,
     DatospPage,
+    // ComponentsExpandableComponent,
   ],
   imports: [
     BrowserModule,
@@ -77,6 +83,7 @@ import { Push, PushObject, PushOptions } from '@ionic-native/push/ngx';
     MegatestDetalle,
     MegacursosPage,
     GrupoPage,
+    CommentsPage,
     PlayPage,
     PlanPage1,
     PopoverComponent,

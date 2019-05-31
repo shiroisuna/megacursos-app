@@ -20,6 +20,7 @@ import { ConfigPage } from '../pages/config/config';
 import { MegacursosPage } from '../pages/megacursos/megacursos';
 // ------------ Aca esta mi import JAMP
 import { GrupoPage } from '../pages/grupo/grupo';
+import { CommentsPage } from '../pages/comments/comments';
 // ------------ Aca esta mi import JAMP
 import { MegatestPage } from '../pages/megatest/megatest';
 import { MiplanPage } from '../pages/miplan/miplan';
@@ -42,6 +43,9 @@ import { ContactComponent } from '../components/contact/contact';
 import { PopovermegatestComponent } from '../components/popovermegatest/popovermegatest';
 import { MegatestDetalle } from '../pages/detalles-megates/detalles-megates';
 import { RecientesPage } from '../pages/recientes/recientes';
+
+ // { ComponentsExpandableComponent } from '../components/components-expandable/components-expandable';
+
 //Simport { NetworkInterface } from '@ionic-native/network-interface';
 //import { GlobalProvider } from '../providers/global/global';
 import { Stripe } from '@ionic-native/stripe';
@@ -71,6 +75,7 @@ var AppModule = /** @class */ (function () {
                 RegisterPage,
                 MegacursosPage,
                 GrupoPage,
+                CommentsPage,
                 ProductPage,
                 PlayPage,
                 PlanPage1,

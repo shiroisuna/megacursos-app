@@ -1,9 +1,12 @@
 <ion-header>
     <ion-navbar>
-      <ion-title>Darío Fernández</ion-title>      
+      <ion-title>Darío Fernández</ion-title>
+      <div class="ion-text-right">
+      	
     	<button ion-button color="dark" clear>
     		<ion-icon name="logo-instagram"></ion-icon>
     	</button>
+      </div>      
     </ion-navbar>
   </ion-header>
 <ion-content no-padding>
@@ -16,14 +19,15 @@
 		    <p>Madrid España</p>
 		</ion-item>
 		<ion-row>
+			<ion-col><ion-input type="file" value=""></ion-input></ion-col>
 			<ion-col><img src="assets/imgs/advance-card-bttf.png"></ion-col>
 			<ion-col><img src="assets/imgs/advance-card-bttf.png"></ion-col>
 			<ion-col><img src="assets/imgs/advance-card-bttf.png"></ion-col>
 		</ion-row>
 
 		<ion-card-content>
-			<h2>Darío Fernández</h2>
-		    <p>Madrid España</p>
+			<!-- <h2>Darío Fernández</h2>
+		    <p>Madrid España</p> -->
 		    <ion-note>
 	        	11h ago
 	    	</ion-note>
@@ -40,12 +44,23 @@
 		      </button>
 		    </ion-col>
 		    <ion-col align-self-right text-right>
-		      <button ion-button icon-start clear small>
+			  <ion-segment [(ngModel)]="options">
+			    <!-- <ion-segment-button value="comments" clear> -->
+			      <button ion-button icon-start clear small>
+			         <ion-icon name="heart-outline"></ion-icon>
+			      </button>
+			    <!-- </ion-segment-button> -->
+			    <ion-segment-button value="comments" clear>
+			    	<button ion-button icon-start clear small (click)="goToCommentPage()">
+				        <ion-icon name="text"></ion-icon>
+				    </button>
+			    </ion-segment-button>
+			  </ion-segment>
+		      <!-- <button ion-button icon-start clear small>
 		         <ion-icon name="heart-outline"></ion-icon>
 		      </button>
 		      <button ion-button icon-start clear small>
-		        <ion-icon name="text"></ion-icon>
-		      </button>
+		        <ion-icon name="text"></ion-icon> -->
 		    </ion-col>
 		    <!-- <ion-col align-self-center text-center>
 		      <ion-note>
@@ -54,4 +69,34 @@
 		    </ion-col> -->
 		</ion-row>
 	</ion-card>
+
+	
+	
+	<div [ngSwitch]="options">
+	  
+
+	  <ion-list>
+	    <ion-item  *ngSwitchCase="'comments'">
+	      <ion-thumbnail item-start>
+	        <img src="img/thumbnail-kitten-1.jpg">
+	      </ion-thumbnail>
+	      <h4>Pedro Tzuc</h4>
+	      
+    	  <ion-input type="text" value=""></ion-input>
+	    </ion-item>
+	    <ion-item>
+	      <ion-thumbnail item-start>
+	        <img src="img/thumbnail-kitten-1.jpg">
+	      </ion-thumbnail>
+	      <h4>Laura Rivas</h4>
+	      <p>Muy bueno!!!</p>
+	    </ion-item>
+	   <ion-note>
+        	Ver los 84 comentarios
+    	</ion-note>
+	  </ion-list>
+	</div>
+
+
+	
 </ion-content>

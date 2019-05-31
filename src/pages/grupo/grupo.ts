@@ -5,6 +5,10 @@ import { AsistenciaPage } from '../asistencia/asistencia';
 import { RecientesPage } from '../recientes/recientes';
 import { SERVER_URL } from '../../providers/global/global';
 import { Http, Headers, RequestOptions } from '@angular/http';
+import { CommentsPage } from '../comments/comments';
+// import { StartPage } from 'start'
+
+// import { ComponentsExpandableComponent } from "../../components/components-expandable/components-expandable";
 
 let url = SERVER_URL;
 
@@ -15,6 +19,12 @@ let url = SERVER_URL;
 
 export class GrupoPage {
 
+	constructor(public navCtrl: NavController){}
+
+	goToCommentPage(){
+
+		this.navCtrl.push(CommentsPage)
+	}
 
 	
 
