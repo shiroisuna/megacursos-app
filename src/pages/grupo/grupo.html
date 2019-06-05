@@ -3,9 +3,13 @@
       <ion-title>Darío Fernández</ion-title>
       <div class="ion-text-right">
       	
-    	<button ion-button color="dark" clear>
+    	<button ion-button color="dark" clear extend="full" (click)="showModalPublic()">
     		<ion-icon name="logo-instagram"></ion-icon>
     	</button>
+    	<button ion-button clear (click)="goToProfilePage()">
+		    <img class="rounded" src="assets/imgs/marty-avatar.png">
+    	</button>
+		
       </div>      
     </ion-navbar>
   </ion-header>

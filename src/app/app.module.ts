@@ -12,6 +12,8 @@ import { MegacursosPage } from '../pages/megacursos/megacursos';
 // ------------ Aca esta mi import JAMP
 import { GrupoPage } from '../pages/grupo/grupo';
 import { CommentsPage } from '../pages/comments/comments';
+import { ProfilePage } from '../pages/profile/profile';
+import { ModalPublicPage } from '../pages/modal-public/modal-public';
 // ------------ Aca esta mi import JAMP
 import { AsistenciaPage } from '../pages/asistencia/asistencia';
 import { MegatestPage } from '../pages/megatest/megatest';
@@ -57,6 +59,8 @@ import { Push, PushObject, PushOptions } from '@ionic-native/push/ngx';
     MegacursosPage,
     GrupoPage,
     CommentsPage,
+    ProfilePage,
+    ModalPublicPage,
     ProductPage,
     PlayPage,
     PlanPage1,
@@ -84,6 +88,8 @@ import { Push, PushObject, PushOptions } from '@ionic-native/push/ngx';
     MegacursosPage,
     GrupoPage,
     CommentsPage,
+    ProfilePage,
+    ModalPublicPage,
     PlayPage,
     PlanPage1,
     PopoverComponent,
