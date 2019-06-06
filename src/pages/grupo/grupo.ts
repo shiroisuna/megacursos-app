@@ -36,13 +36,7 @@ export class GrupoPage {
 
 	async showModalPublic(){
 
-		const modal = await this.modalCtrl.create({
-			component: ModalPublicPage,
-			componentProps: {
-				nombre: 'Dario Fernandez',
-				pais: 'España'
-			}
-		});
+		const modal = this.modalCtrl.create('ModalPublicPage');
 
 		await modal.present();
 

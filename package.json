@@ -23,6 +23,7 @@
     "@ionic-native/android-permissions": "^4.19.0",
     "@ionic-native/core": "~4.11.0",
     "@ionic-native/device-accounts": "^4.19.0",
+    "@ionic-native/image-picker": "^4.20.0",
     "@ionic-native/in-app-purchase-2": "^4.19.0",
     "@ionic-native/network-interface": "^4.15.0",
     "@ionic-native/push": "^5.6.0",

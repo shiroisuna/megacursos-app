@@ -7,7 +7,8 @@ import { ModalPublicPage } from './modal-public';
     ModalPublicPage,
   ],
   imports: [
-    // IonicPageModule.forChild(ModalPublicPage),
+  	// IonicPageModule
+    IonicPageModule.forChild(ModalPublicPage),
   ],
   exports: [
   	ModalPublicPage,

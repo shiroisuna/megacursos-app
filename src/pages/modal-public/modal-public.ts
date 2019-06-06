@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavParams, ViewController } from 'ionic-angular';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+
+//Plugins JAMP Created 06-06-2018
+import { ImagePicker } from '@ionic-native/image-picker';
 
 /**
  * Generated class for the ModalPublicPage page.
@@ -15,7 +19,28 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ModalPublicPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+	datos: FormGroup;
+
+  constructor(private navParams: NavParams, private view: ViewController, private formBuilder: FormBuilder, 
+  				private imagePicker: ImagePicker) {
+
+  		this.datos = this.formBuilder.group({
+  			post: ['', Validators.required],
+
+  		});
+  }
+
+
+  subirFoto(){
+
+  	
+  }
+
+
+  closeModal(){
+
+  	this.view.dismiss();
+
   }
 
   ionViewDidLoad() {

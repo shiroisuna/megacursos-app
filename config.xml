@@ -24,8 +24,7 @@
     <preference name="FadeSplashScreen" value="false" />
     <platform name="android">
         <allow-intent href="market:*" />
-<preference name="GoogleAndroidClientId" value="471059358723" />
-
+        <preference name="GoogleAndroidClientId" value="471059358723" />
         <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />
         <icon density="mdpi" src="resources/android/icon/drawable-mdpi-icon.png" />
         <icon density="hdpi" src="resources/android/icon/drawable-hdpi-icon.png" />
@@ -108,5 +107,8 @@
     <engine name="android" spec="~7.1.0" />
     <plugin name="phonegap-plugin-push" spec="^2.2.3">
         <variable name="SENDER_ID" value="471059358723" />
+    </plugin>
+    <plugin name="cordova-plugin-telerik-imagepicker" spec="~2.3.2">
+        <variable name="PHOTO_LIBRARY_USAGE_DESCRIPTION" value="your usage message" />
     </plugin>
 </widget>

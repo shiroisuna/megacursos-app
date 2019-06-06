@@ -13,7 +13,7 @@ import { MegacursosPage } from '../pages/megacursos/megacursos';
 import { GrupoPage } from '../pages/grupo/grupo';
 import { CommentsPage } from '../pages/comments/comments';
 import { ProfilePage } from '../pages/profile/profile';
-import { ModalPublicPage } from '../pages/modal-public/modal-public';
+// import { ModalPublicPage } from '../pages/modal-public/modal-public';
 // ------------ Aca esta mi import JAMP
 import { AsistenciaPage } from '../pages/asistencia/asistencia';
 import { MegatestPage } from '../pages/megatest/megatest';
@@ -36,6 +36,11 @@ import { MegatestDetalle } from '../pages/detalles-megates/detalles-megates';
 import { RecientesPage } from '../pages/recientes/recientes';
 import { InAppPurchase2 } from '@ionic-native/in-app-purchase-2';
 import { Push, PushObject, PushOptions } from '@ionic-native/push/ngx';
+
+
+//Plugins JAMP Created 06-06-2018
+
+import { ImagePicker } from '@ionic-native/image-picker';
 
 // import { ComponentsExpandableComponent } from "../components/components-expandable/components-expandable";
 
@@ -60,7 +65,7 @@ import { Push, PushObject, PushOptions } from '@ionic-native/push/ngx';
     GrupoPage,
     CommentsPage,
     ProfilePage,
-    ModalPublicPage,
+    // ModalPublicPage,
     ProductPage,
     PlayPage,
     PlanPage1,
@@ -89,7 +94,7 @@ import { Push, PushObject, PushOptions } from '@ionic-native/push/ngx';
     GrupoPage,
     CommentsPage,
     ProfilePage,
-    ModalPublicPage,
+    // ModalPublicPage,
     PlayPage,
     PlanPage1,
     PopoverComponent,
@@ -109,6 +114,7 @@ import { Push, PushObject, PushOptions } from '@ionic-native/push/ngx';
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
+    ImagePicker,
     InAppPurchase2,
     Push,
   ]
