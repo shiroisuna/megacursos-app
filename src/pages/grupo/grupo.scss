@@ -7,8 +7,20 @@ page-grupo {
 		}
 	}
 
-	.right {
+	.botones-right {
 
+		float: right;
+	}
+
+	.titulo-left{
+		float: left;
+	}
+
+	.icon-avatar{
+		top: 10px;
+		width: 40%;
+		border-radius: 100px !important;
+		z-index: 99;
 		float: right;
 	}
 

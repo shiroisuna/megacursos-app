@@ -1,19 +1,31 @@
 <ion-header>
     <ion-navbar>
-		<div class="left">
-	  		<ion-title>Darío Fernández</ion-title>
+
+		<div class="titulo-left">
+	  		<ion-title>Grupo</ion-title>
 			
 		</div>
-      	<div class="right">
+
+	
+      	<div class="botones-right">
+      		<ion-row>
+      			<ion-col >
+			    	<button ion-button color="dark" clear extend="full" (click)="showModalPublic()">
+			    		<ion-icon name="logo-instagram"></ion-icon>
+			    	</button>
+      			
+      			</ion-col>
+      			<ion-col >
+			    	<div (click)="goToProfilePage()">
+					    <img class="icon-avatar" src="assets/imgs/marty-avatar.png">
+			    	</div>
+      			
+      			</ion-col>
+      		</ion-row>
       	
-	    	<button ion-button color="dark" clear extend="full" (click)="showModalPublic()">
-	    		<ion-icon name="logo-instagram"></ion-icon>
-	    	</button>
-	    	<button ion-button clear (click)="goToProfilePage()">
-			    <img class="rounded" src="assets/imgs/marty-avatar.png">
-	    	</button>
 		
       	</div>      
+
     </ion-navbar>
   </ion-header>
 <ion-content no-padding>
@@ -26,7 +38,7 @@
 		    <p>Madrid España</p>
 		</ion-item>
 		<ion-row>
-			<ion-col><ion-input type="file" value=""></ion-input></ion-col>
+			
 			<ion-col><img src="assets/imgs/advance-card-bttf.png"></ion-col>
 			<ion-col><img src="assets/imgs/advance-card-bttf.png"></ion-col>
 			<ion-col><img src="assets/imgs/advance-card-bttf.png"></ion-col>
@@ -89,7 +101,7 @@
 	      </ion-thumbnail>
 	      <h4>Pedro Tzuc</h4>
 	      
-    	  <ion-input type="text" value=""></ion-input>
+    	  <!-- <ion-input type="text" value=""></ion-input> -->
 	    </ion-item>
 	    <ion-item>
 	      <ion-thumbnail item-start>

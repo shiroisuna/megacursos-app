@@ -104,11 +104,11 @@
     <plugin name="com.danielsogl.cordova.deviceaccounts" spec="~1.0.0" />
     <plugin name="cordova-plugin-android-permissions" spec="^1.0.0" />
     <engine name="browser" spec="~5.0.4" />
-    <engine name="android" spec="~7.1.0" />
     <plugin name="phonegap-plugin-push" spec="^2.2.3">
         <variable name="SENDER_ID" value="471059358723" />
     </plugin>
     <plugin name="cordova-plugin-telerik-imagepicker" spec="~2.3.2">
         <variable name="PHOTO_LIBRARY_USAGE_DESCRIPTION" value="your usage message" />
     </plugin>
+    <engine name="android" spec="~7.1.4" />
 </widget>
