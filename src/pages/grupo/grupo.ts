@@ -22,12 +22,18 @@ let url = SERVER_URL;
 
 export class GrupoPage {
 
-	constructor(public navCtrl: NavController, public modalCtrl: ModalController){}
+	constructor(
+		public navCtrl: NavController, 
+		public modalCtrl: ModalController, 
+		private http: Http
+		){}
 
 	goToCommentPage(){
 
 		this.navCtrl.push(CommentsPage)
 	}
+
+
 
 	goToProfilePage(){
 
@@ -40,6 +46,42 @@ export class GrupoPage {
 
 		await modal.present();
 
+	}
+
+	prueba(){
+		 
+		var headers = new Headers();
+	    headers.append('Accept', 'application/json');
+	    headers.append('Content-Type', 'application/json');
+	    headers.append('Access-Control-Allow-Credentials', 'true');
+	    headers.append('Access-Control-Allow-Origin', 'http://localhost:8100');
+	    let options = new RequestOptions({ headers: headers });
+	    this.http.get(url + '/posts', options)
+	      .map(res => res.json())
+	      .subscribe(res => {
+	        console.log(res);
+	        // this.total=12;
+	        // this.user = res.login;
+	        // this.email = res.email;
+	        // this.blogs = res.blog;
+	        //  console.log('aqio');
+	        //  console.log(this.blogs);
+	        // if (res.recientes == null) {
+	        //   this.total = 0;
+	        //   // console.log("null");
+	        // }
+	        // else {
+	        //   this.total = this.reciente.length;
+	        //   // console.log("nonull");
+	        // }
+	      },
+	        (Error => { console.log("error") })
+	      );
+	}
+
+
+	ionViewDidLoad() {
+	    this.prueba();
 	}
 
 }

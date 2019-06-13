@@ -26,11 +26,11 @@ export class ParallaxDirective {
 
   	this.main_cnt = cnt.getElementsByClassName('main-cnt')[0];
 
-  	this.re.setElementStyle(this.header, 'webTransformOrigin', 'center bottom');
+  	this.render.setElementStyle(this.header, 'webTransformOrigin', 'center bottom');
 
-  	this.re.setElementStyle(this.header, 'background-size', 'cover');
+  	this.render.setElementStyle(this.header, 'background-size', 'cover');
 
-  	this.re.setElementStyle(this.main_cnt, 'position', 'absolute');
+  	this.render.setElementStyle(this.main_cnt, 'position', 'absolute');
   }
 
   onCntscroll(ev){
@@ -47,7 +47,7 @@ export class ParallaxDirective {
 
   		}
 
-  		this.re.setElementStyle(this.header, 'webkitTransform', 'translate3d(0'+ this.ta +'px, 0) scale(1,1)');
+  		this.render.setElementStyle(this.header, 'webkitTransform', 'translate3d(0'+ this.ta +'px, 0) scale(1,1)');
 
   	}
 

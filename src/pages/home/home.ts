@@ -74,7 +74,7 @@ export class HomePage {
     headers.append('Accept', 'application/json');
     headers.append('Content-Type', 'application/json');
     headers.append('Access-Control-Allow-Credentials', 'true');
-    headers.append('Access-Control-Allow-Origin', 'true');
+    headers.append('Access-Control-Allow-Origin', 'http://localhost:8100');
     let options = new RequestOptions({ headers: headers });
     this.http.get(url + '/users/homeplan/' + this.idUser, options)
       .map(res => res.json())
@@ -93,6 +93,8 @@ export class HomePage {
     var headers = new Headers();
     headers.append("Accept", 'application/x-www-form-urlencoded');
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
+    headers.append('Access-Control-Allow-Credentials', 'true');
+    headers.append('Access-Control-Allow-Origin', 'http://localhost:8100');
     let options = new RequestOptions({ headers: headers });
     this.http.get(url + '/users/getrecientes/' + this.idUser, options)
       .map(res => res.json())
@@ -135,6 +137,8 @@ export class HomePage {
     var headers = new Headers();
     headers.append("Accept", 'application/x-www-form-urlencoded');
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
+    headers.append('Access-Control-Allow-Credentials', 'true');
+    headers.append('Access-Control-Allow-Origin', 'http://localhost:8100');
     let options = new RequestOptions({ headers: headers });
     let data = {
       idChapter: ""+idChapter+"",
@@ -218,6 +222,8 @@ export class HomePage {
     var headers = new Headers();
     headers.append("Accept", 'application/x-www-form-urlencoded');
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
+    headers.append('Access-Control-Allow-Credentials', 'true');
+    headers.append('Access-Control-Allow-Origin', 'http://localhost:8100');
     let options = new RequestOptions({ headers: headers });
     //var data={};
     loader.present()
