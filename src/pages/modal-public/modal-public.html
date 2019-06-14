@@ -13,6 +13,17 @@
 	<form [formGroup]="datos">
 		
 		<ion-input type="text" formControlName="post" placeholder="¿Qué estás Pensando?"></ion-input>
+		<div id="ImagesPreview" *ngIf="fotos">
+			<ion-row>
+				<ion-col *ngFor="let item of fotos; let i = item">
+				
+					<ion-item>
+						<ion-icon name="close-circle" (click)="borrarFoto(i)"></ion-icon>
+						<img [src]="item" class="image-item">
+					</ion-item>
+				</ion-col>
+			</ion-row>
+		</div>
 		<button ion-button (click)="subirFoto()" icon-left dark clear >
 			<ion-icon name="images" ></ion-icon>
 		</button>

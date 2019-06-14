@@ -38,10 +38,13 @@ import { InAppPurchase2 } from '@ionic-native/in-app-purchase-2';
 import { Push, PushObject, PushOptions } from '@ionic-native/push/ngx';
 
 
-//Plugins JAMP Created 06-06-2018
+//Plugins JAMP Created 06-06-2019
 
 import { ImagePicker } from '@ionic-native/image-picker';
+import { File } from '@ionic-native/file';
 
+//providers JAMP created 14-06-2019
+import { LoadImgProvider } from '../providers/load-img/load-img';
 // import { ComponentsExpandableComponent } from "../components/components-expandable/components-expandable";
 
 
@@ -117,6 +120,8 @@ import { ImagePicker } from '@ionic-native/image-picker';
     ImagePicker,
     InAppPurchase2,
     Push,
+    LoadImgProvider,
+    File
   ]
 })
 export class AppModule { }

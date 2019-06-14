@@ -48,67 +48,67 @@ export class LoginPage {
   signIn() {
     this.navCtrl.push(HomePage);
 
-  //   if ((this.email.value == '') || (this.password.value == '')) {
+    // if ((this.email.value == '') || (this.password.value == '')) {
 
-  //     //alert("ingrese");
-  //     let alert = this.alertCtrl.create({
-  //       title: "Alerta",
-  //       subTitle: "Ingrese Email y/o contraseña",
-  //       buttons: ['OK']
-  //     });
-  //     alert.present()
+    //   //alert("ingrese");
+    //   let alert = this.alertCtrl.create({
+    //     title: "Alerta",
+    //     subTitle: "Ingrese Email y/o contraseña",
+    //     buttons: ['OK']
+    //   });
+    //   alert.present()
 
-  //   }
-  //   else {
-  //     let loader = this.loading.create({
-  //       content: 'Enviando...',
-  //     });
-  //     //loader.present();
-  //     //loader.dismiss();
-  //     var headers = new Headers();
-  //     // headers.append('Accept', 'application/jsonp');
-  //     headers.append('Access-Control-Allow-Origin', '*');
-  //     headers.append('Content-Type', 'application/json');
-  //     // headers.append('Access-Control-Allow-Methods', 'GET, POST, PUT, OPTIONS, PATCH, DELETE');
-  //     headers.append('Access-Control-Allow-Headers', 'Origin, X-Requested');
-  //     // headers.append('Access-Control-Allow-Origins', '*');
-  //     let options = new RequestOptions({ headers: headers });
-  //     let data = {
-  //       email: "" + this.email.value + "",
-  //       password: "" + this.password.value + ""
-  //     }
-  //     loader.present()
-  //       .then(() => {
-  //         this.http.post(url + '/users/login', data, options)
-  //           .map(res => res.json())
-  //           .subscribe(res => {
-  //             loader.dismiss();
-  //             console.log(res);
-  //             if (res.res == 'true') {
-  //               window.localStorage.setItem("isLogin", JSON.stringify(res));
-  //               //window.localStorage.setItem("data", res.datos);
+    // }
+    // else {
+    //   let loader = this.loading.create({
+    //     content: 'Enviando...',
+    //   });
+    //   //loader.present();
+    //   //loader.dismiss();
+    //   var headers = new Headers();
+    //   // headers.append('Accept', 'application/jsonp');
+    //   headers.append('Access-Control-Allow-Origin', '*');
+    //   headers.append('Content-Type', 'application/json');
+    //   // headers.append('Access-Control-Allow-Methods', 'GET, POST, PUT, OPTIONS, PATCH, DELETE');
+    //   headers.append('Access-Control-Allow-Headers', 'Origin, X-Requested');
+    //   // headers.append('Access-Control-Allow-Origins', '*');
+    //   let options = new RequestOptions({ headers: headers });
+    //   let data = {
+    //     email: "" + this.email.value + "",
+    //     password: "" + this.password.value + ""
+    //   }
+    //   loader.present()
+    //     .then(() => {
+    //       this.http.post(url + '/users/login', data, options)
+    //         .map(res => res.json())
+    //         .subscribe(res => {
+    //           loader.dismiss();
+    //           console.log(res);
+    //           if (res.res == 'true') {
+    //             window.localStorage.setItem("isLogin", JSON.stringify(res));
+    //             //window.localStorage.setItem("data", res.datos);
                 
-  //               let alert = this.alertCtrl.create({
-  //               title:"Excelente",
-  //               subTitle:"good",
-  //               buttons: ['OK']
-  //               });
-  //               alert.present();
+    //             let alert = this.alertCtrl.create({
+    //             title:"Excelente",
+    //             subTitle:"good",
+    //             buttons: ['OK']
+    //             });
+    //             alert.present();
                 
-  //               this.navCtrl.setRoot(TabsPage);
-  //               //console.log()
-  //             }//end if
-  //             else {
-  //               let alert = this.alertCtrl.create({
-  //                 title: "Información",
-  //                 subTitle: "Estas credenciales no coinciden con nuestros registros,por favor revise sus datos de acceso.",
-  //                 buttons: ['OK']
-  //               });
-  //               alert.present();
-  //             }
-  //           });
-  //       });
-  //   }
+                this.navCtrl.setRoot(TabsPage);
+                //console.log()
+    //           }//end if
+    //           else {
+    //             let alert = this.alertCtrl.create({
+    //               title: "Información",
+    //               subTitle: "Estas credenciales no coinciden con nuestros registros,por favor revise sus datos de acceso.",
+    //               buttons: ['OK']
+    //             });
+    //             alert.present();
+    //           }
+    //         });
+    //     });
+    // }
   }
   resetPassword() {
     this.navCtrl.push(ResetpasswordPage);
