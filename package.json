@@ -35,7 +35,7 @@
 		"angular2-swiper": "^0.8.1",
 		"cc.fovea.cordova.purchase": "^7.2.6",
 		"cordova-android": "~7.1.0",
-		"cordova-browser": "~5.0.4",
+		"cordova-browser": "~6.0.0",
 		"cordova-device-accounts": "^1.0.0",
 		"cordova-plugin-android-permissions": "^1.0.0",
 		"cordova-plugin-device": "^2.0.2",
